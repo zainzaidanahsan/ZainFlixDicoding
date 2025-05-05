@@ -37,7 +37,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun setMovieAdapter () = with(binding){
         movieAdapter = MovieAdapter {resultMovieItem ->
             val idMovie = resultMovieItem.id
-            Log.i("setMovieAdapter" , "resultMovieItem.id = $resultMovieItem.id")
             if (idMovie != null){
                 val bundle = Bundle().apply {
                     putInt("id_movie", idMovie.toInt())
@@ -47,7 +46,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
         rvMoviesHome.adapter = movieAdapter // baru ditambahkan
         rvMoviesHome.layoutManager =  LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        Log.i("setMovieAdapter" , "masuk fun")
 
     }
 
@@ -59,21 +57,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 viewModel.moviePopuler.collectLatest { result ->
                     when (result) {
                         is Resource.Loading -> {
-                            Log.d("observeMovie", "Loading...")
                             // Tampilkan shimmer/loading state
                         }
                         is Resource.Success -> {
                             val movieList = result.data
                             if (!movieList.isNullOrEmpty()) {
                                 movieAdapter.submitData(movieList)
-                                Log.d("observeMovie", "Data ditemukan: ${movieList.size} item")
                             } else {
                                 Log.d("observeMovie", "Data kosong")
                                 // Tampilkan empty state UI
                             }
                         }
                         is Resource.Error -> {
-                            Log.e("observeMovie", "Terjadi kesalahan: ${result.message}")
                             // Tampilkan UI error
                         }
                     }
