@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#273443</color>
+    <color name="colorAccent">#f1304d</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_color">#1DA1F2</color>
+    <color name="blue_basebg_movie">#1B74FF</color>
+    <color name="blue_primary_movie">#B3B5CC</color>
+    <color name="blue_secondary_movie">#E2F3FF</color>
+    <color name="transparent">#00000000</color>
+
+</resources>

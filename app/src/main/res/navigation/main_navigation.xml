@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/home_navigation">
+
+    <fragment
+        android:id="@+id/home_navigation"
+        android:name="com.capstone.zainflix.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMovieFragment"
+        android:name="com.capstone.zainflix.ui.detail.DetailMovieFragment"
+        android:label="fragment_detail_movie"
+        tools:layout="@layout/fragment_detail_movie" >
+        <argument
+            android:name="movieId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favorite_navigation"
+        android:name="com.capstone.favorite.ui.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailMoviesFragment"
+            app:destination="@id/detailMovieFragment" />
+    </fragment>
+</navigation>
