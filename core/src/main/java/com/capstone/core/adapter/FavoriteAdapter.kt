@@ -81,8 +81,6 @@ class FavoriteAdapter(var onClickItem: ((Movie) -> Unit?)? = null)
                 }
             )
                 .into(imgPoster)
-//            Log.i("onBindViewHolder", "img link = ${EndPointMovie.IMAGE_BASE_URL}${dataMovie.posterPath}")
-//            popularity.text= dataMovie.popularity
             title.text = dataMovie.title
             tvDate.text = dataMovie.releaseDate
             tvOriginTitle.text = dataMovie.originalTitle
