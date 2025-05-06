@@ -12,11 +12,11 @@ class ApiConfig {
     companion object{
 
         fun getDiscoverApiService(): ApiDiscoverService {
-            val hostname = "developer.themoviedb.org"
+            val hostname = "api.themoviedb.org"
             val certificatePinner = CertificatePinner.Builder()
-                .add(hostname, "sha256/hJdIWBzspbVklOxAKu6uW0gpJVgbNbE9tXjL1G8SRPc=")
-                .add(hostname, "sha256/qR5muP958z7AZJtxWhkevbLZ8po8upR0EXFA3mVPeog=")
-                .add(hostname, "sha256/J2/oqMTsdhFWW/n85tys6b4yDBtb6idZayIEBx7QTxA=")
+                .add(hostname, "sha256/k1Hdw5sdSn5kh/gemLVSQD/P4i4IBQEY1tW4WNxh9XM=")
+                .add(hostname, "sha256/18tkPyr2nckv4fgo0dhAkaUtJ2hu2831xlO2SKhq8dg=")
+                .add(hostname, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
                 .build()
             val level =
                 if (DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
